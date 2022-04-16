@@ -1,45 +1,10 @@
-* {
-  box-sizing: border-box;
-}
 
-.flex-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  font-family: "ubuntu", sans-serif;
-  color:#2D3748
-}
 
-#cover {
-  background-color: #3949AB;
-  flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#cover-title {
-  font-weight: bold;
-  font-size: 24px;
-  color: white;
-}
-
-#cover-subtitle{
-  color:white;
-  font-size: 14px;
-  margin-top: -12px;
-}
-
-#login {
-  flex:1;
-  display:flex;
-  flex-direction: column;
-}
 
 #login-content{
   flex:1;
-  padding-left: 172px;padding-right: 172px;
+  padding-left: 172px;
+  padding-right: 172px;
   padding-top: 200px;
 }
 
@@ -58,58 +23,8 @@
   font-weight: bold;
 }
 
-#login-label-username,#login-label-password {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.input-element {
-  font-size: 16px;
-  color :#333333;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #8692A6;
-  padding: 16px 34px;
-  width: 100%;
-  /* margin-top: 10px; */
-}
-
-#login-options{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 22px;
-}
 
 #forgot-pass{
   text-decoration: none;
   color: #3949AB;
 }
-
-#login-btn{
-  margin-top: 38px;
-  background-color: #3949AB ;
-  width: 100%;
-  padding-top: 16px;padding-bottom: 16px;
-  border: none;
-  border-radius: 24px;
-  font-size: 16px;
-  font-weight: 500;
-  color:white
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 12px;
-  margin-bottom: 42px;
-}
-
-.text-bold{
-  font-weight: bold;
-}
-footer p {
-  margin: 0;
-}
-

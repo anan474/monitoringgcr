@@ -1,5 +1,18 @@
 import { useState, Component } from "react";
 
+import {
+  Box,
+  Flex,
+  Center,
+  Text,
+  Image,
+  Checkbox,
+  Input,
+  Button,
+  VStack,
+  HStack,
+} from "@chakra-ui/react";
+
 import "./Login.css";
 
 import astronot from "./assets/astronot.png";
@@ -9,32 +22,27 @@ import { InputElement } from "./Components/InputElement";
 
 function Cover() {
   return (
-    <section name="cover" id="cover">
-      <img src={astronot} alt="astronot" />
-      <p id="cover-title">Monitoring GCR</p>
-      <p id="cover-subtitle">Universitas Tanjungpura</p>
-    </section>
+    <VStack justify="center" align="center" flex={1} bg="#3949AB" color="white">
+      <Image src={astronot} alt="astronot" />
+      <Text fontWeight="bold" fontSize="xl">
+        Monitoring GCR
+      </Text>
+      <Text>Universitas Tanjungpura</Text>
+    </VStack>
   );
 }
 
 const Footer = () => {
   return (
-    <footer>
-      <p>
+    <VStack fontSize="sm" justify="center" align="center" pb="32px">
+      <Text>
         Dikembangkan oleh{" "}
-        <span class="text-bold">UPT. Teknologi Informasi dan Komunikasi</span>
-      </p>
-      <p>Universitas Tanjungpura</p>
-    </footer>
-  );
-};
-
-const RememberMeOption = ({ value, onChange }) => {
-  return (
-    <div>
-      <input type="checkbox" value={value} onChange={onChange} />
-      Remember me
-    </div>
+        <Text fontWeight="bold" display="inline">
+          UPT. Teknologi Informasi dan Komunikasi
+        </Text>
+      </Text>
+      <Text>Universitas Tanjungpura</Text>
+    </VStack>
   );
 };
 
@@ -45,17 +53,17 @@ function Login() {
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <div className="flex-container">
+    <Flex height="100vh" fontFamily="Ubuntu">
       <Cover />
-      <section name="login" id="login">
-        <div id="login-content">
-          <img id="login-logo" src={logountan} alt="logountan" />
-          <p id="login-title-sub">Welcome Back</p>
-          <p id="login-title">Login to your account</p>
+      <VStack flex="1" justify={"space-between"}>
+        <VStack pt="200px" alignItems="flex-start">
+          <Image src={logountan} alt="logountan" alignSelf="center" />
+
+          <Text id="login-title-sub">Welcome Back</Text>
+          <Text id="login-title">Login to your account</Text>
 
           <InputElement
             label="Username"
-            type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Masukkan username anda"
@@ -63,22 +71,30 @@ function Login() {
 
           <InputElement
             label="Password"
-            type="password"
+            isPassword
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Masukkan password anda"
           />
-          <div id="login-options">
-            <RememberMeOption
+
+          <HStack justifyContent="space-between" mt="22px">
+            <Checkbox
               value={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-            />
+            >
+              Remember me
+            </Checkbox>
             <a href="#" id="forgot-pass">
               Forgot password?
             </a>
-          </div>
-          <button
-            id="login-btn"
+          </HStack>
+          <Button
+            bg="#3949AB"
+            color="white"
+            borderRadius="24px"
+            width="100%"
+            mt="38px"
+            py="24px"
             onClick={() => {
               console.log(username, password, rememberMe);
 
@@ -95,11 +111,11 @@ function Login() {
             }}
           >
             Login
-          </button>
-        </div>
+          </Button>
+        </VStack>
         <Footer />
-      </section>
-    </div>
+      </VStack>
+    </Flex>
   );
 }
 

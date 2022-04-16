@@ -1,16 +1,25 @@
-export const InputElement = ({ label, type, value, onChange, placeholder }) => {
+import { Box, Text, Input } from "@chakra-ui/react";
+
+export const InputElement = ({
+  label,
+  isPassword = false,
+  value,
+  onChange,
+  placeholder,
+}) => {
   return (
-    <>
-      <p id={`label-${label}`}>{label}</p>
-      <input
-        className="input-element"
-        name={label}
-        id={`${label.toLowerCase()}-input`}
-        type={type}
+    <Box mt="12px">
+      <Text fontSize="l" fontWeight="500" mb="8px">
+        {label}
+      </Text>
+      <Input
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        type={isPassword ? "password" : "text"}
+        p="24px"
+        borderColor="#8692A6"
       />
-    </>
+    </Box>
   );
 };

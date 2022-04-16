@@ -1,10 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import Login from "./Login";
 
 function App() {
-  return <Login />;
+  return (
+    <ChakraProvider>
+      <Login />
+    </ChakraProvider>
+  );
 }
 
 export default App;
